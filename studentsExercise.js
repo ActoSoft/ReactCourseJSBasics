@@ -34,17 +34,16 @@ const students = [
 // 4. Imprimir los estudiantes encontrados en el paso 3 de la siguiente manera: 
 // El alumno Pepito Perez tuvo un promedio de 11 y se ganó unos chetos.
 const studentsWithAvg = students.map(student => {
-  const { firstName, lastName, calif1, calif2, calif3 } = student
-  const fullName = `${firstName} ${lastName}`
-  const average = (calif1 + calif2 + calif3) / 3
-  const newStudent = { ...student, fullName, average }
-  return newStudent
+  const fullName = `${student.firstName} ${student.lastName}`
+  const average = (student.calif1 + student.calif2 + student.calif3) / 3
+  student.fullName = fullName
+  student.average = average
+  return student
 })
 const intelligentStudents = studentsWithAvg.filter(student => {
   return student.average >= 8
 })
 intelligentStudents.forEach(student => {
-  const { fullName, average } = student
-  console.log(`El alumno o alumna ${fullName} tuvo un promedio de ${average} y se ganó unos chetos.`)
+  console.log(`El alumno o alumna ${student.fullName} tuvo un promedio de ${student.average} y se ganó unos chetos.`)
   console.log('')
 })

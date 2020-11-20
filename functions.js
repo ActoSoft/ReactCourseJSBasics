@@ -12,5 +12,7 @@ const sayMyName = (name) => {
   return greeting
 }
 
-const saludo = sayMyName('Panchito')
+const sayMyName2 = name => (`Hola! ${name}`)
+
+const saludo = sayMyName2('Panchito')
 console.log(saludo)
